@@ -7,7 +7,7 @@ function matrix() {
   q.height = s.height;
   
   var p = [];
-  var fillColor = "purple";
+  var fillColor = "green";
   for (var i = 0; i < 256; p[i++] = 1);
   
   setInterval(function() {
@@ -19,7 +19,13 @@ function matrix() {
       ctx.fillText(String.fromCharCode(3e4 + Math.random() * 33), i * 10, v);
       p[i] = v > 758 + Math.random() * 1e4 ? 0 : v + 10;
     });
-    
+  }, 33);
+  
+  setTimeout(function() {
+    fillColor = "purple";
+  }, 5000);
+  
+  setInterval(function() {
     if (fillColor === "purple") {
       fillColor = "blue";
     } else {
