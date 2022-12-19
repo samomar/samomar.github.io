@@ -1,4 +1,8 @@
 function matrix() {
+  function generateRandomColor() {
+    return "#" + Math.floor(Math.random() * 16777215).toString(16);
+  }
+  
   var s = window.screen;
   var q = document.querySelector("canvas");
   var ctx = q.getContext("2d");
@@ -7,9 +11,9 @@ function matrix() {
   q.height = s.height;
   
   var p = [];
-  var color1 = "#" + Math.floor(Math.random() * 16777215).toString(16);
-  var color2 = "#" + Math.floor(Math.random() * 16777215).toString(16);
-  var color3 = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  var color1 = generateRandomColor();
+  var color2 = generateRandomColor();
+  var color3 = generateRandomColor();
   var fillColor = color1;
   var counter = 0;
   for (var i = 0; i < 256; p[i++] = 1);
@@ -23,16 +27,13 @@ function matrix() {
       ctx.fillText(String.fromCharCode(3e4 + Math.random() * 33), i * 10, v);
       p[i] = v > 758 + Math.random() * 1e4 ? 0 : v + 10;
     });
-    
-    if (counter === 0) {
-      fillColor = color2;
-      counter = 1;
-    } else if (counter === 1) {
-      fillColor = color3;
-      counter = 2;
-    } else {
+    counter++;
+    if (counter % 3 === 0) {
       fillColor = color1;
-      counter = 0;
+    } else if (counter % 3 === 1) {
+      fillColor = color2;
+    } else {
+      fillColor = color3;
     }
   }, 33);
 }
