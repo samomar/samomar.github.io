@@ -12,18 +12,16 @@ function matrix() {
   
   setInterval(function() {
     ctx.fillStyle = "rgba(0,0,0,.05)";
-    
     ctx.fillRect(0, 0, q.width, q.height);
     
     ctx.fillStyle = fillColor;
-    
     p.map(function(v, i) {
       ctx.fillText(String.fromCharCode(3e4 + Math.random() * 33), i * 10, v);
       p[i] = v > 758 + Math.random() * 1e4 ? 0 : v + 10;
     });
     
     if (fillColor === "purple") {
-      fillColor = "green";
+      fillColor = "blue";
     } else {
       fillColor = "purple";
     }
