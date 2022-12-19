@@ -15,7 +15,6 @@ function matrix() {
   var color2 = generateRandomColor();
   var color3 = generateRandomColor();
   var fillColor = color1;
-  var counter = 0;
   for (var i = 0; i < 256; p[i++] = 1);
   
   setInterval(function() {
@@ -27,13 +26,22 @@ function matrix() {
       ctx.fillText(String.fromCharCode(3e4 + Math.random() * 33), i * 10, v);
       p[i] = v > 758 + Math.random() * 1e4 ? 0 : v + 10;
     });
-    counter++;
-    if (counter % 3 === 0) {
-      fillColor = color1;
-    } else if (counter % 3 === 1) {
-      fillColor = color2;
-    } else {
-      fillColor = color3;
-    }
   }, 33);
+  
+    setTimeout(function() {
+    // Generate new random colors
+    color1 = generateRandomColor();
+    color2 = generateRandomColor();
+    color3 = generateRandomColor();
+    
+    // Toggle the fill color between the 3 colors
+    if (fillColor === color1) {
+      fillColor = color2;
+    } else if (fillColor === color2) {
+      fillColor = color3;
+    } else {
+      fillColor = color1;
+    }
+  }, 1000);
 }
+
