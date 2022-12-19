@@ -9,7 +9,9 @@ function matrix() {
   var p = [];
   var color1 = "#" + Math.floor(Math.random() * 16777215).toString(16);
   var color2 = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  var color3 = "#" + Math.floor(Math.random() * 16777215).toString(16);
   var fillColor = color1;
+  var counter = 0;
   for (var i = 0; i < 256; p[i++] = 1);
   
   setInterval(function() {
@@ -22,10 +24,15 @@ function matrix() {
       p[i] = v > 758 + Math.random() * 1e4 ? 0 : v + 10;
     });
     
-    if (fillColor === color1) {
+    if (counter === 0) {
       fillColor = color2;
+      counter = 1;
+    } else if (counter === 1) {
+      fillColor = color3;
+      counter = 2;
     } else {
       fillColor = color1;
+      counter = 0;
     }
   }, 33);
 }
