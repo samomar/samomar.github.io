@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  #matrix-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  #iframe-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 500px;
+    z-index: 1;
+  }
+  
+  #q {
+    width: 100%;
+    height: 100%;
+  }
+  

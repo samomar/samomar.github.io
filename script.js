@@ -10,7 +10,7 @@ function matrix() {
   }
 
   var s = window.screen;
-  var q = document.querySelector("canvas");
+  var q = document.getElementById("q");
   var ctx = q.getContext("2d");
 
   q.width = s.width;
@@ -45,3 +45,5 @@ function matrix() {
     }
   }, 33);
 }
+
+matrix();
