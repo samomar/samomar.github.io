@@ -37,7 +37,7 @@ body {
     position: absolute;
     top: calc(50% - 330px);
     left: calc(50% - 175px);
-    background-image: linear-gradient(90deg, #ff5c8a, #5e50f9);
+    background-image: linear-gradient(90deg, red, white, blue); /* Added three colors */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: glitch 2s ease infinite, animate-colors 1s ease-in-out infinite;
