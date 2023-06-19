@@ -1,6 +1,75 @@
 body {
     margin: 0;
-    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --background: #060608;
+    --color: #FAFAFA;
+    --gradient-position: 0%;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+  }
+  
+  .container {
+    color: var(--color);
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    text-align: center;
+    padding-top: 10px;
+    color: var(--color);
+    position: absolute;
+    top: calc(50% - 330px);
+    left: calc(50% - 175px);
+    background-image: linear-gradient(90deg, #ff5c8a, #5e50f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glitch 2s ease infinite, animate-colors 1s ease-in-out infinite;
+    font-size: 168%;
+    font-family: "Lato", sans-serif;
+    font-weight: bold; /* Added bold font-weight */
+  }
+  
+  @keyframes glitch {
+    0% {
+      text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+      transform: translate(8px);
+    }
+    2% {
+      text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    }
+    4%, 100% {
+      text-shadow: none;
+      transform: none;
+    }
+  }
+  
+  @keyframes animate-colors {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
   
   #matrix-container {
@@ -25,5 +94,13 @@ body {
   #q {
     width: 100%;
     height: 100%;
+  }
+  
+  .header {
+    animation: glitch 2s ease infinite, animate-colors 5s ease-in-out infinite;
+    background-size: 200% 100%;
+    background-position: right center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
