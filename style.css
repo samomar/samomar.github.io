@@ -37,13 +37,13 @@ body {
     position: absolute;
     top: calc(50% - 330px);
     left: calc(50% - 175px);
-    background-image: linear-gradient(90deg, red, white, blue); /* Added three colors */
+    background-image: linear-gradient(90deg, red, white, blue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: glitch 2s ease infinite, animate-colors 1s ease-in-out infinite;
     font-size: 168%;
     font-family: "Lato", sans-serif;
-    font-weight: bold; /* Added bold font-weight */
+    font-weight: bold;
   }
   
   @keyframes glitch {
