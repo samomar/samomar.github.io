@@ -44,7 +44,9 @@
     <script src="script.js"></script>
     <script>
       setTimeout(function () {
-        document.getElementById("join-button-container").style.opacity = "1";
+        document.getElementsByClassName(
+          "join-button-container"
+        )[0].style.opacity = "1";
         document.getElementById("iframe-container").style.opacity = "1";
       }, 1000);
     </script>
