@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Hello Monster, you're a curious one, aren't you? -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eslam Omar</title>
@@ -13,25 +12,41 @@
   </head>
 
   <body>
-    <!-- <h1 class="header">RECONFIGURE YOUR MIND</h1> -->
     <div class="container">
       <div class="header" style="--headers: 3">
         <span style="--index: 0">RECONFIGURE YOUR MIND</span>
         <span style="--index: 1">RECONFIGURE YOUR MIND</span>
         <span style="--index: 2">RECONFIGURE YOUR MIND</span>
       </div>
+      <div id="matrix-container">
+        <canvas id="q"></canvas>
+      </div>
+      <div class="join-button-container">
+        <button
+          class="join-button"
+          onclick="window.open('https://discord.gg/N2Ee2kbrAB')"
+        >
+          Join Sam's Library
+        </button>
+      </div>
+      <div id="iframe-container">
+        <iframe
+          id="discord-iframe"
+          src="https://discord.com/widget?id=1115061358250180629&theme=dark"
+          width="350"
+          height="500"
+          allowtransparency="true"
+          frameborder="0"
+          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        ></iframe>
+      </div>
     </div>
-    <div id="matrix-container">
-      <canvas id="q"></canvas>
-    </div>
-    <iframe
-      src="https://discord.com/widget?id=1115061358250180629&theme=dark"
-      width="350"
-      height="500"
-      allowtransparency="true"
-      frameborder="0"
-      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-    ></iframe>
     <script src="script.js"></script>
+    <script>
+      setTimeout(function () {
+        document.getElementById("join-button-container").style.opacity = "1";
+        document.getElementById("iframe-container").style.opacity = "1";
+      }, 1000);
+    </script>
   </body>
 </html>

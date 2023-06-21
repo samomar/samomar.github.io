@@ -26,24 +26,27 @@ function matrix() {
 
   setInterval(updateColors, 3000);
 
-  setInterval(function () {
-    ctx.fillStyle = "rgba(0,0,0,.05)";
-    ctx.fillRect(0, 0, q.width, q.height);
+  setTimeout(function () {
+    setInterval(function () {
+      ctx.fillStyle = "rgba(0,0,0,.05)";
+      ctx.fillRect(0, 0, q.width, q.height);
 
-    ctx.fillStyle = fillColor;
-    p.map(function (v, i) {
-      ctx.fillText(String.fromCharCode(3e4 + Math.random() * 33), i * 10, v);
-      p[i] = v > 758 + Math.random() * 1e4 ? 0 : v + 10;
-    });
-    counter++;
-    if (counter % 3 === 0) {
-      fillColor = color1;
-    } else if (counter % 3 === 1) {
-      fillColor = color2;
-    } else {
-      fillColor = color3;
-    }
-  }, 33);
+      ctx.fillStyle = fillColor;
+      ctx.font = "20px monospace"; // Increase the font size here
+      p.map(function (v, i) {
+        ctx.fillText(String.fromCharCode(3e4 + Math.random() * 33), i * 20, v); // Adjust the character size and position
+        p[i] = v > 758 + Math.random() * 1e4 ? 0 : v + 20; // Adjust the character size increment
+      });
+      counter++;
+      if (counter % 3 === 0) {
+        fillColor = color1;
+      } else if (counter % 3 === 1) {
+        fillColor = color2;
+      } else {
+        fillColor = color3;
+      }
+    }, 33);
+  }, 1111);
 }
 
 matrix();

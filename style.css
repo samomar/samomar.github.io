@@ -60,6 +60,26 @@ body {
   background-size: 200% 100%;
 }
 
+@keyframes header {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  }
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
 @keyframes glitch {
   0% {
     text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
@@ -106,60 +126,43 @@ body {
   z-index: 1;
 }
 
-#q {
-  width: 100%;
-  height: 100%;
+.join-button-container {
+  margin-top: 45px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  animation: fade-in 2s ease-in-out forwards;
+  opacity: 0;
 }
 
- {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.right {
-  text-align: right;
-  width: 100%;
-}
-
-.header span:nth-child(odd) {
-  --glitch-translate: 8px;
-}
-
-.header span:nth-child(even) {
-  --glitch-translate: -8px;
+.join-button {
+  padding: 10px 99px;
+  font-size: 1.2rem;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  background-color: #27804a;
+  color: #fafafa;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes header {
+.join-button:hover {
+  background-color: #5865ed;
+}
+
+#iframe-container {
+  position: relative;
+  animation: fade-in 2s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateX(-50%);
-    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
   }
-  60% {
-    opacity: 0.5;
-    transform: translateX(50%);
-  }
-  80% {
-    transform: none;
+  100% {
     opacity: 1;
-    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-  }
-  100% {
-    text-shadow: none;
-  }
-}
-
-@keyframes glitch {
-  0% {
-    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-    transform: translate(var(--glitch-translate));
-  }
-  2% {
-    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-  }
-  4%,
-  100% {
-    text-shadow: none;
-    transform: none;
   }
 }
