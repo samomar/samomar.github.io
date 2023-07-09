@@ -9,7 +9,7 @@ body {
   --color: #fafafa;
 }
 
-@media screen and (max-width: 545px) {
+/* @media screen and (max-width: 545px) {
   .header {
     position: absolute;
     top: 50%;
@@ -22,7 +22,7 @@ body {
   .header span {
     white-space: nowrap;
   }
-}
+} */
 
 html,
 body {
@@ -48,7 +48,7 @@ body {
 .header {
   display: grid;
   position: absolute;
-  top: calc(50% - 290px);
+  top: calc(40% - 290px);
   left: calc(50% - 175px);
 }
 .header span {
