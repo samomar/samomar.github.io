@@ -9,7 +9,7 @@ body {
   --color: #fafafa;
 }
 
-@media screen and (max-width: 345px) {
+@media screen and (max-width: 545px) {
   .header {
     position: absolute;
     top: 50%;
