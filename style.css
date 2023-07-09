@@ -48,7 +48,7 @@ body {
 .header {
   display: grid;
   position: absolute;
-  top: calc(40% - 290px);
+  top: calc(45% - 290px);
   left: calc(50% - 175px);
 }
 .header span {
